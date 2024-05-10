@@ -1,0 +1,56 @@
+{% load static %}
+<footer class="footer" id="footer">
+    <div class="footer-container">
+      <div class="pt_120 xs_pt_80 sm_pt_80">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-4">
+              <div class="tf__footer_content fade_right" data-trigerId="footer" data-stagger=".25">
+                <div class="icon">
+                  <div class="icon-container">
+                    <img src="{% static 'svg/map.svg' %}" alt="footer" class="img-fluid w-100 svg" />
+                  </div>
+                </div>
+                <div class="text">
+                  <h3>Адресс</h3>
+                  <p>{{settings.address}}</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="tf__footer_content fade_right" data-trigerId="footer" data-stagger=".25">
+                <div class="icon">
+                  <div class="icon-container">
+                    <img src="{% static 'svg/phone.svg' %}" alt="footer" class="img-fluid w-100 svg" />
+                  </div>
+                </div>
+                <div class="text">
+                  <h3>Номер телефона</h3>
+                  <a href="tel:1234567890">{{settings.phone}}</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="tf__footer_content fade_right" data-trigerId="footer" data-stagger=".25">
+                <div class="icon">
+                  <div class="icon-container">
+                    <img src="{% static 'svg/envelope.svg' %}" alt="footer" class="img-fluid w-100 svg" />
+                  </div>
+                </div>
+                <div class="text">
+                  <h3>Почта</h3>
+                  <a href="mailto:example@gmail.com">{{settings.mail}}</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <div class="tf__footer_copyright">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>

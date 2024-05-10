@@ -1,0 +1,471 @@
+{% extends "include/homepage.html" %}
+{% load static %}
+{% block content %}
+<!--- =========================
+        PRELOADER START
+    =================================--> 
+    <div class="preloader">
+      <svg viewBox="0 0 1000 1000" preserveAspectRatio="none">
+        <path id="svg" d="M0,1005S175,995,500,995s500,5,500,5V0H0Z"></path>
+      </svg>
+      <h5 class="preloader-text">Loading</h5>
+    </div>
+    <!--================================
+        PRELOADER END
+    =================================-->
+    <!--================================
+        MENU START
+    =================================-->
+    {% include "include/header.html" %}
+    <!--================================
+        MENU END
+    =================================-->
+
+    <!--================================
+        BANNER START
+    =================================-->
+    <section
+      class="tf__banner banner"
+      style="background: url({% static 'images/bg/banner.jpg' %})"
+    >
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col-xl-6 col-lg-8">
+            <div class="tf__banner_text">
+              <h1>
+                Привет, Я {{settings.name}}! Творческий
+                <span class="cd-headline rotate-1">
+                  <!-- ANIMATE TEXT VALUES: zoom, rotate-1, letters type, letters rotate-2, loading-bar, slide, clip, letters rotate-3, letters scale, push,  -->
+                  <span class="cd-words-wrapper">
+                    <b class="is-visible">{{settings.job}}</b>
+                  </span>
+                </span>
+              </h1>
+              <p>
+                {{settings.description}}
+              </p>
+            </div>
+          </div>
+          <div class="col-xl-5 col-lg-4">
+            <div class="tf__banner_img">
+              <div class="img">
+                <img
+                  src="{{settings.image.url}}"
+                  alt="ZYAN"
+                  class="img-fluid w-100"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--================================
+        BANNER END
+    =================================-->
+    <!--================================
+        SERVICE START
+    =================================-->
+    <section class="tf__service pt_130 xs_pt_80" id="service">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-9 m-auto">
+            <div class="tf__section_heading mb_40">
+              <h5 class="has-animation">Мои услуги</h5>
+              <h2 class="has-animation">
+                Создайте свои историю с помощью <br />
+                програмиравания
+              </h2>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          {% for services in services %}
+          <div class="col-lg-4 col-md-6">
+            <div class="tf__single_service fade_left" data-trigerId="service">
+              <span>
+                <img src="{% static 'svg/website-design.svg' %}" alt="service" class="svg w-100" />
+              </span>
+              <h3>{{services.name}}</h3>
+              <p>
+                {{services.description}}
+              </p>
+            </div>
+          </div>
+          {% endfor %}
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!--================================
+        SERVICE END
+    =================================-->
+
+    <!--================================
+        ABOUT START
+    =================================-->
+    <section class="tf__about pt_140 xs_pt_80" id="about">
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col-xxl-7 col-lg-6 col-xl-6">
+            <div class="tf__section_heading pb_80 xs_pb_50">
+              <h5 class="has-animation">Обо мне</h5>
+              <h2 class="has-animation">
+                {{settings.name}} Backend {{settings.job}} 
+              </h2>
+            </div>
+            <div class="tf__about_text">
+              <p>
+                {{settings.description}}
+              </p>
+            </div>
+          </div>
+          <div class="col-xxl-4 col-lg-6 col-xl-6">
+            <div class="tf__about_img fade_right" data-trigerId="about">
+              <img
+                src="{{settings.image.url}}"
+                alt="ZYAN"
+                class="img-fluid w-100"
+              />
+              <div class="tf__about_img_text">
+                <i class="fas fa-chart-pie-alt"></i>
+                <div class="tf__about_content">
+                  <h4>Daily Activity</h4>
+                  <p>Loream is ispam</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--================================
+        ABOUT END
+    =================================-->
+
+    <!--================================
+        DESIGN START
+    =================================-->
+    <section class="tf__design mt_135 xs_mt_40 mb_120 xs_mb_80" id="counter">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-6 col-lg-6">
+            <div class="tf__design_text">
+              <h2>Иновация  </h2>
+              <p class="">
+                {{services.desc}}
+              </p>
+            </div>
+            <div class="row">
+              <div class="col-xl-6 col-md-6">
+                <div class="tf__design_counter fade_left" data-trigerId="counter">
+                  <span class="icon">
+                    <img
+                      src="{% static 'svg/complete-project.svg' %}"
+                      alt="counter"
+                      class="svg img-fluid w-100"
+                    />
+                  </span>
+                  <h3><span class="counter">{{projects.num}}</span>k+</h3>
+                  <p>Завершенные проекты</p>
+                </div>
+              </div>
+              <div class="col-xl-6 col-md-6">
+                <div class="tf__design_counter fade_left" data-trigerId="counter">
+                  <span class="icon">
+                    <img
+                      src="{% static 'svg/client-review.svg' %}"
+                      alt="counter"
+                      class="img-fluid w-100 svg"
+                    />
+                  </span>
+                  <h3><span class="counter">{{projects.review}}</span>+</h3>
+                  <p>Отзывов</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-6 col-lg-6">
+            <div class="tf__design_form">
+              <h2 class="has-animation">ПРИКОСНИТЕСЬ МЕНЯ?</h2>
+              <p class="">
+              Заполните форму что бы связатться со мной
+              </p>
+              <form action="#">
+                <input class="" type="text" placeholder="Your Name" />
+                <input class="" type="email" placeholder="Your Email" />
+                <input class="" type="text" placeholder="Phone Number" />
+                <textarea class="" rows="4" placeholder="Message"></textarea>
+                <button type="submit" class="common_btn">submit now</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!--================================
+        DESIGN END
+    =================================-->
+
+    <!--================================
+        SKILLS START
+    =================================-->
+    <section class="tf__skills pt_115 xs_pt_75 pb_70 xs_pb_30" id="skills">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-10 col-lg-8 m-auto mb_60">
+            <div class="tf__section_heading mb_40">
+              <h5 class="has-animation">ОБРАЗОВАНИЕ И НАВЫКИ</h5>
+              <h2 class="has-animation">
+                Демонстрация вашего таланта <br />
+                усиление вашего воздействия
+              </h2>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          {% for edu in education %}
+          <div class="col-xl-6 col-lg-6">
+            <div class="tf__single_skills fade_bottom" data-trigerId="skills" data-stagger=".13">
+              <span>{{edu.s}} - {{edu.po}}</span>
+              <h3>{{edu.name}}</h3>
+              <p>
+                {{edu.desc}}
+              </p>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+        <div class="row">
+          {% for skills in skills %}
+          <div class="col-xl-6 col-lg-6">
+            <div class="tf__team_skills_bar_single fade_bottom" data-trigerId="skills" data-stagger=".25">
+              <p>{{skills.name}}</p>
+              <div id="bar1" class="barfiller">
+                <div class="tipWrap">
+                  <span class="tip"></span>
+                </div>
+                <span class="fill" data-percentage="75"></span>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+    
+    <!--================================
+        SKILLS END
+    =================================-->
+
+    <!--================================
+        PORTFOLIO START
+    =================================-->
+    <section class="tf__portfolio mt_120 xs_mt_80" id="projects">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-10 col-lg-9 mb_30">
+            <div class="tf__section_heading">
+              <h5 class="has-animation">МОЕ ПОСЛЕДНЕЕ ПОРТФОЛИО</h5>
+              <h2 class="has-animation">
+                Eподнимите свой бренд на новый уровень <br />
+                высоты с нашим опытом портфолио
+              </h2>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          {% for part in parfolio %}
+          <div class="col-xl-8 col-md-6">
+            <a
+              href="{{part.silka}}"
+              class="tf__portfolio_item play_btn"
+              data-cursor="Watch <br> video"
+            >
+              <img
+                src="{{part.image.url}}"
+                alt="portfolio"
+                class="img-fluid w-100"
+              />
+              <div class="text">
+                <h4>{{patt.name}}</h4>
+                <p>youtube</p>
+              </div>
+            </a>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+    <!--================================
+        PORTFOLIO END
+    =================================-->
+
+    <!--================================
+        TESTIMONIAL START
+    =================================-->
+    <section class="tf__testimonial pt_115 xs_pt_75">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-8 m-auto mb_30">
+            <div class="tf__section_heading">
+              <h5 class="has-animation">ОТЗЫВЫ КЛИЕНТОВ</h5>
+            </div>
+          </div>
+        </div>
+        <div class="row testi_slider">
+          {% for review in review %}
+          <div class="col-xl-6">
+            <div class="tf__single_testimonial">
+              <div class="img">
+                <img
+                  src="{{review.image.url}}"
+                  alt="clients"
+                  class="img-fluid w-100"
+                />
+              </div>
+              <p class="rating">
+                <i class="fa-solid fa-star-sharp"></i>
+                <i class="fa-solid fa-star-sharp"></i>
+                <i class="fa-solid fa-star-sharp"></i>
+                <i class="fa-solid fa-star-sharp"></i>
+                <i class="fa-solid fa-star-sharp"></i>
+              </p>
+              <h3>{{review.name}}</h3>
+              <h5>{{review.dol}}</h5>
+              <p class="description">
+                {{review.desc}}
+              </p>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+    <!--================================
+        TESTIMONIAL END
+    =================================-->
+
+    <!--================================
+        BRAND START
+    =================================-->
+    <div class="tf__brand mt_120 xs_mt_80">
+      <div class="row">
+        <div class="col-12">
+          <div class="marquee_animi">
+            <ul>
+              <li>* aiogram</li>
+              <li>* Python</li>
+              <li>* rest</li>
+              <li>* world</li>
+              <li>* Development</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--================================
+        BRAND END
+    =================================-->
+
+    <!--================================
+        BLOG START
+    =================================-->
+    <section class="tf__blog pt_125 xs_pt_75 pb_40 xs_pb_0" id="blogs">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-8 col-lg-9 mb_30">
+            <div class="tf__section_heading">
+              <h5 class="has-animation">МОЙ БЛОГ</h5>
+              <h2 class="has-animation">
+                Раскрытие потенциала вашего личного бренда
+              </h2>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          {% for  blog in blog %}
+          <div class="col-xl-4 col-md-6">
+            <div class="tf__slingle_blog fade_left" data-trigerId="blogs">
+              <a
+                href="blog_details.html"
+                class="tf__blog_img"
+                data-cursor="read <br> more"
+              >
+                <img
+                  src="{{blog.image.url}}"
+                  alt="blog"
+                  class="img-fluid w-100"
+                />
+              </a>
+              <div class="tf__blog_text">
+                <span>{{blog.data}}</span>
+                <ul>
+                  <li>
+                    <i class="fa-sharp fa-solid fa-circle-user"></i> By admin
+                  </li>
+                  <li>
+                    <i class="fa-sharp fa-solid fa-comments"></i> Comments (05)
+                  </li>
+                </ul>
+                <a href="blog_details.html"
+                  >{{data.name}}</a
+                >
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+          <div class="col-12">
+            <a href="blog_list.html" class="common_btn">More Blog +</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--================================
+        BLOG END
+    =================================-->
+    <!--================================
+        SUBSCRIBE START
+    =================================-->
+    <!--================================
+SUBSCRIBE END
+=================================-->
+
+    <!--================================
+        FOOTER START
+    =================================-->
+    {% include "include/footer.html" %}
+    
+    <!--================================
+  FOOTER END
+=================================-->
+    <!--================================
+        SCROLL BUTTON START
+    =================================-->
+    <div class="progress active c-pointer">
+      <svg
+        class="progress-svg"
+        width="100%"
+        height="100%"
+        viewBox="-1 -1 102 102"
+      >
+        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"></path>
+      </svg>
+    </div>
+    <!--================================
+        SCROLL BUTTON END
+    =================================-->
+
+    <!--================================
+        CURSOR START
+    =================================-->
+    <div id="magic-cursor">
+      <div id="ball"></div>
+    </div>
+    <!--================================
+        CURSOR END
+    =================================-->
+
+    {% endblock %}

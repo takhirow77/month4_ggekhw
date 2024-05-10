@@ -1,0 +1,105 @@
+{% load static %}
+<nav class="navbar navbar-expand-lg main_menu">
+    
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <i class="fa-sharp fa-regular fa-bars bar_icon"></i>
+        <i class="fa-regular fa-xmark close_icon"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav m-auto">
+          <li class="nav-item">
+            <a class="nav-link text_hover_animaiton active" href="#"
+              >Главная <i class="*"></i
+            ></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text_hover_animaiton" href="#about"
+              >Обо мне</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text_hover_animaiton" href="#service"
+              >Услуги
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text_hover_animaiton" href="#projects"
+              >Проекты
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text_hover_animaiton" href="blog_list.html"
+              >Блог <i class="far fa-angle-down"></i
+            ></a>
+            <ul class="droap_menu">
+              <li>
+                <a href="blog_list.html">Список блогов</a>
+              </li>
+              <li><a href="blog_details.html">Подробности блога</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text_hover_animaiton" href="{% url "contact" %}"
+              >Контакты
+            </a>
+          </li>
+        </ul>
+        <span
+          class="toggle_icon c-pointer"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasRight"
+          aria-controls="offcanvasRight"
+          ><i
+            class="fa-sharp fa-sharp fa-regular fa-bars bar_icon-staggered"
+          ></i
+        ></span>
+      </div>
+    </div>
+  </nav>
+
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight">
+    <div class="offcanvas-header">
+      <a class="offcanvas-logo" href="index_2.html">
+        <img src="{% static 'images/logo2.png' %}" alt="ZAYAN" class="img-fluid w-100" />
+      </a>
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="offcanvas"
+        aria-label="Close"
+      >
+        <i class="fa-regular fa-xmark"></i>
+      </button>
+    </div>
+    <div class="offcanvas-body">
+      <div class="tf__design_form offcanvas_form">
+        <div class="offcanvas-content-box">
+          <h4 class="offcanvas_title">Об о мне</h4>
+          <p>
+            {{settings.description}}
+          </p>
+        </div>
+        <div class="offcanvas_contact_form">
+          <h4 class="offcanvas_title">Связаться</h4>
+          <form action="#">
+            <input
+              type="Text"
+              placeholder="Ваше имя"
+              aria-autocomplete="list"
+            />
+            <input type="email" placeholder="Ваша почта" />
+            <textarea rows="4" placeholder="Сообщение"></textarea>
+            <button type="submit" class="common_btn">Отправить сейчас</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
