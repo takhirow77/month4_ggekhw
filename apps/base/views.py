@@ -16,4 +16,14 @@ def index(request):
     return render(request, 'base/index.html', locals())
 
 def contact(request):
+
     return render(request, 'contact.html', locals() )
+
+
+def blog(request):
+    return render(request, 'blog_list.html', locals())
+
+
+
+def blog_details(request):
+    return render(request, 'blog_details.html', locals())

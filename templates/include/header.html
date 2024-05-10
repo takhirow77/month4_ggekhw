@@ -36,14 +36,14 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text_hover_animaiton" href="blog_list.html"
+            <a class="nav-link text_hover_animaiton" href="{% url "blog" %}"
               >Блог <i class="far fa-angle-down"></i
             ></a>
             <ul class="droap_menu">
               <li>
-                <a href="blog_list.html">Список блогов</a>
+                <a href="{% url "blog" %}">Список блогов</a>
               </li>
-              <li><a href="blog_details.html">Подробности блога</a></li>
+              <li><a href="{% url "blog_details" %}">Подробности блога</a></li>
             </ul>
           </li>
           <li class="nav-item">
